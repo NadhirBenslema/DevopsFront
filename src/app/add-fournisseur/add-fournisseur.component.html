@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <form [formGroup]="reactiveForm" (ngSubmit)="saveFournisseur()">
+          <div class="form-group">
+            <label for="code">Code </label>
+            <input type="text" class="form-control" id="db" placeholder="Enter le code" formControlName="code">
+            <div style="color: red;"
+            *ngIf="code?.errors?.['required'] &&
+            code?.touched">
+            Le code est obligatoire !
+          </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="libelle"> Libelle </label>
+            <input type="text" class="form-control" id="df" placeholder="Enter libelle" formControlName="libelle">
+            <div style="color: red;"
+              *ngIf="libelle?.errors?.['required'] &&
+              libelle?.touched">
+              La libelle est obligatoire !
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="categorie">Categorie</label>
+            <input type="text" class="form-control" id="sp" placeholder="Enter categorie" formControlName="categorie">
+            <div style="color: red;"
+              *ngIf="categorie?.errors?.['required'] &&
+              categorie?.touched">
+              La  categorie est obligatoire !
+            </div>
+            <div style="color: red;"
+            *ngIf="categorie?.errors?.['minlength'] &&
+            categorie?.touched">
+            La categorie doit contenir au moins 3 caractéres !
+          </div>
+          </div>
+
+  
+          <button type="submit" class="btn btn-primary mt-3">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  

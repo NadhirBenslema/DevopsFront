@@ -1,0 +1,66 @@
+
+<div class="container">
+
+
+  <div class="row">
+    
+
+    <div class="col">
+      <form [formGroup]="updateForm" (ngSubmit)="updateC()">
+        <div class="form-group">
+          <label for="code">Code</label>
+          <input type="text" class="form-control" id="db" formControlName="code">
+          <div style="color: red;"
+            *ngIf="code?.errors?.['required'] &&
+            code?.touched">
+            La date de début est obligatoire !
+          </div>
+        
+        </div>
+    
+        <div class="form-group">
+            <label for="libelle">Libelle </label>
+            <input type="text" class="form-control" id="df" formControlName="libelle">
+            <div style="color: red;"
+              *ngIf="libelle?.errors?.['required'] &&
+              libelle?.touched">
+              La date de fin est obligatoire !
+            </div>
+          
+        </div>
+    
+        <div class="form-group">
+            <label for="categorie">Categorie </label>
+            <input type="text" class="form-control" id="sp" formControlName="categorie">
+            <div style="color: red;"
+              *ngIf="categorie?.errors?.['required'] &&
+              categorie?.touched">
+              La  Categorie est obligatoire !
+            </div>
+            <div style="color: red;"
+            *ngIf="categorie?.errors?.['minlength'] &&
+            categorie?.touched">
+            La categorie doit contenir au moins 3 caractéres !
+          </div>
+          
+        </div>
+    
+      
+    
+        <div>
+          <strong style="color: green;" *ngIf="ajout">{{message}}</strong>
+        </div>
+
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
