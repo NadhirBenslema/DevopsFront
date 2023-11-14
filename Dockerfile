@@ -1,25 +1,23 @@
-# Stage 1: Build Stage
 FROM node:18 as build
 
 WORKDIR /app
 
 COPY package*.json ./
 
+
+
 RUN npm install -f
 
 COPY . .
 
-# Make sure the build output goes to /app/dist
-RUN npm run build --output-path=dist
+RUN npm run build
 
-# Stage 2: Final Stage
+# Use a smaller image for serving the application
 FROM nginx:alpine
 
-WORKDIR /usr/share/nginx/html
-
 # Copy the built app from the 'build' stage
-COPY --from=build /app/dist/DevopsFront .
+COPY --from=build /app/dist/devops-front /usr/share/nginx/html
 
-EXPOSE 80
+EXPOSE 4200
 
 CMD ["nginx", "-g", "daemon off;"]
