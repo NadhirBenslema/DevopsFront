@@ -7,7 +7,7 @@ import { UpdateFournisseurComponent } from './update-fournisseur/update-fourniss
 const routes: Routes = [
   { path: '', component: FournisseurComponent},
   { path: 'addFournisseur', component: AddFournisseurComponent},
-  { path: 'updateFournisseur', component: UpdateFournisseurComponent},
+  { path: 'updateFournisseur/:id', component: UpdateFournisseurComponent},
 
 
 

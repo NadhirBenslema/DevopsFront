@@ -18,7 +18,7 @@ export class UpdateFournisseurComponent implements OnInit {
   updateForm=new FormGroup({
     code: new FormControl('', [Validators.required]),
     libelle: new FormControl('', [Validators.required]),
-    categorie: new FormControl('', [Validators.required, Validators.minLength(2)]),  
+    categorie: new FormControl('', [Validators.required]),  
   })
 
   constructor(private fournisseurService:FournisseurService,private R:Router ,private actR:ActivatedRoute) { }
