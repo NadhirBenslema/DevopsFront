@@ -9,8 +9,6 @@ const routes: Routes = [
   { path: 'addFournisseur', component: AddFournisseurComponent},
   { path: 'updateFournisseur/:id', component: UpdateFournisseurComponent},
 
-
-
 ];
 
 @NgModule({
