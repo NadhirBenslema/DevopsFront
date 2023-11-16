@@ -13,7 +13,7 @@ export class FournisseurService {
   constructor( private http : HttpClient) { }
 
   //URL du Backend
-  url = "http://localhost:8089/SpringMVC/fournisseur";
+  url = "http://192.168.1.6:8089/SpringMVC/fournisseur";
   endPoint_a="/retrieve-all-fournisseurs";
 
   getAllFournisseurs(){
